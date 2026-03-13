@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Journal — Handwoven</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <a href="../index.html" class="nav-logo">Handwoven</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#work">Work</a></li>
+        <li><a href="index.html" aria-current="page">Journal</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2>Journal</h2>
+
+        <ul class="post-list">
+          <!-- Add new posts at the top of this list.
+               Copy one <li> block and update the href, date, title, and excerpt. -->
+
+          <li class="post-item">
+            <time class="post-date" datetime="2026-03-13">13 Mar 2026</time>
+            <a href="on-choosing-yarn.html" class="post-title">On Choosing Yarn</a>
+            <p class="post-excerpt">
+              Not all fibres behave the same on the loom. Here's how I think
+              about weight, twist, and texture before I wind a single thread.
+            </p>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year"></span> Handwoven. Made with patience.</p>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
