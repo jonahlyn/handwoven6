@@ -1,0 +1,220 @@
+/* ── Reset & base ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --color-bg:      #faf8f4;
+  --color-surface: #f2ede4;
+  --color-text:    #2c2420;
+  --color-muted:   #7a6a60;
+  --color-accent:  #8b4a2f;
+  --color-accent2: #4a6b5a;
+  --color-accent3: #3a4a6b;
+  --font-sans: 'Georgia', serif;
+  --font-mono: 'Courier New', monospace;
+  --radius: 4px;
+  --max-width: 900px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+a { color: var(--color-accent); text-decoration: underline; }
+a:hover { opacity: 0.75; }
+
+/* ── Nav ──────────────────────────────────────────────────── */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-bg);
+  border-bottom: 1px solid #e0d8cc;
+}
+
+.nav {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  color: var(--color-text);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--color-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+}
+
+.nav-links a:hover { color: var(--color-text); opacity: 1; }
+
+/* ── Hero ─────────────────────────────────────────────────── */
+.hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 28px,
+      rgba(139,74,47,0.04) 28px,
+      rgba(139,74,47,0.04) 29px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 28px,
+      rgba(139,74,47,0.04) 28px,
+      rgba(139,74,47,0.04) 29px
+    ),
+    var(--color-surface);
+  padding: 4rem 1.5rem;
+}
+
+.hero-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+  color: var(--color-text);
+}
+
+.hero-sub {
+  font-size: 1.15rem;
+  color: var(--color-muted);
+  max-width: 520px;
+  margin-bottom: 2rem;
+}
+
+/* ── Button ───────────────────────────────────────────────── */
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.5rem;
+  background: var(--color-accent);
+  color: #fff;
+  text-decoration: none;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  transition: background 0.2s;
+}
+
+.btn:hover { background: #6e3a23; opacity: 1; }
+
+/* ── Sections ─────────────────────────────────────────────── */
+.section { padding: 5rem 1.5rem; }
+.section-alt { background: var(--color-surface); }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section h2::after {
+  content: '';
+  display: block;
+  margin-top: 0.35rem;
+  height: 2px;
+  width: 2.5rem;
+  background: var(--color-accent);
+  border-radius: 1px;
+}
+
+/* ── Grid / Cards ─────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: var(--color-bg);
+  border: 1px solid #e0d8cc;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.card-swatch {
+  height: 120px;
+}
+
+.swatch-1 {
+  background: repeating-linear-gradient(
+    45deg,
+    #8b4a2f 0px, #8b4a2f 6px,
+    #c8a882 6px, #c8a882 12px
+  );
+}
+
+.swatch-2 {
+  background: repeating-linear-gradient(
+    90deg,
+    #1a2f4a 0px, #1a2f4a 8px,
+    #3a6b8a 8px, #3a6b8a 16px
+  );
+}
+
+.swatch-3 {
+  background: repeating-linear-gradient(
+    135deg,
+    #3a3a5a 0px, #3a3a5a 6px,
+    #8a8aaa 6px, #8a8aaa 12px
+  );
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  padding: 1rem 1rem 0.35rem;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  padding: 0 1rem 1rem;
+}
+
+/* ── Footer ───────────────────────────────────────────────── */
+footer {
+  border-top: 1px solid #e0d8cc;
+  padding: 2rem 1.5rem;
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .nav-links { gap: 1.25rem; }
+}

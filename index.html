@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Handwoven</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <span class="nav-logo">Handwoven</span>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Crafted with care,<br />thread by thread.</h1>
+        <p class="hero-sub">
+          A space for handmade textiles, patterns, and the slow art of weaving.
+        </p>
+        <a href="#work" class="btn">Explore the collection</a>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About</h2>
+        <p>
+          Every piece begins with a single thread. Handwoven celebrates the
+          tradition of loom weaving — the patience, the rhythm, and the beauty
+          of cloth made by hand. From tapestries to table runners, each work
+          carries the maker's intention in every crossing of warp and weft.
+        </p>
+      </div>
+    </section>
+
+    <section id="work" class="section section-alt">
+      <div class="container">
+        <h2>Work</h2>
+        <div class="grid">
+          <article class="card">
+            <div class="card-swatch swatch-1"></div>
+            <h3>Autumn Tapestry</h3>
+            <p>Wool and linen, 60 × 90 cm. Earthy tones inspired by fallen leaves and harvest light.</p>
+          </article>
+          <article class="card">
+            <div class="card-swatch swatch-2"></div>
+            <h3>Indigo Table Runner</h3>
+            <p>Cotton, hand-dyed with natural indigo. Geometric pattern, 40 × 180 cm.</p>
+          </article>
+          <article class="card">
+            <div class="card-swatch swatch-3"></div>
+            <h3>Winter Wrap</h3>
+            <p>Merino wool, herringbone weave. Warm and lightweight, 70 × 200 cm.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>
+          Commissions, collaborations, and general enquiries welcome.
+          Reach out at <a href="mailto:hello@handwoven.example">hello@handwoven.example</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year"></span> Handwoven. Made with patience.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
