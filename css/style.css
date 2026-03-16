@@ -1,5 +1,11 @@
 /* ── Reset & base ─────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 :root {
   --color-bg:      #faf8f4;
@@ -25,7 +31,11 @@ body {
   line-height: 1.7;
 }
 
-a { color: var(--color-accent); text-decoration: underline; }
+a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
 a:hover { opacity: 0.75; }
 
 /* ── Nav ──────────────────────────────────────────────────── */
@@ -66,7 +76,21 @@ header {
   letter-spacing: 0.03em;
 }
 
-.nav-links a:hover { color: var(--color-text); opacity: 1; }
+/* ── Blog / Journal — base rules (before higher-specificity overrides) ── */
+article h2 {
+  font-size: 1.2rem;
+  margin: 2rem 0 0.5rem;
+}
+
+article p { margin-bottom: 1rem; }
+
+.post-date a { color: inherit; }
+
+/* ── Nav (continued) ──────────────────────────────────────── */
+.nav-links a:hover {
+  color: var(--color-text);
+  opacity: 1;
+}
 
 /* ── Hero ─────────────────────────────────────────────────── */
 .hero {
@@ -78,15 +102,15 @@ header {
       0deg,
       transparent,
       transparent 28px,
-      rgba(139,74,47,0.04) 28px,
-      rgba(139,74,47,0.04) 29px
+      rgb(139 74 47 / 4%) 28px,
+      rgb(139 74 47 / 4%) 29px
     ),
     repeating-linear-gradient(
       90deg,
       transparent,
       transparent 28px,
-      rgba(139,74,47,0.04) 28px,
-      rgba(139,74,47,0.04) 29px
+      rgb(139 74 47 / 4%) 28px,
+      rgb(139 74 47 / 4%) 29px
     ),
     var(--color-surface);
   padding: 4rem 1.5rem;
@@ -124,7 +148,10 @@ header {
   transition: background 0.2s;
 }
 
-.btn:hover { background: #6e3a23; opacity: 1; }
+.btn:hover {
+  background: #6e3a23;
+  opacity: 1;
+}
 
 /* ── Sections ─────────────────────────────────────────────── */
 .section { padding: 5rem 1.5rem; }
@@ -174,7 +201,7 @@ header {
 .swatch-1 {
   background: repeating-linear-gradient(
     45deg,
-    #8b4a2f 0px, #8b4a2f 6px,
+    #8b4a2f 0, #8b4a2f 6px,
     #c8a882 6px, #c8a882 12px
   );
 }
@@ -182,7 +209,7 @@ header {
 .swatch-2 {
   background: repeating-linear-gradient(
     90deg,
-    #1a2f4a 0px, #1a2f4a 8px,
+    #1a2f4a 0, #1a2f4a 8px,
     #3a6b8a 8px, #3a6b8a 16px
   );
 }
@@ -190,7 +217,7 @@ header {
 .swatch-3 {
   background: repeating-linear-gradient(
     135deg,
-    #3a3a5a 0px, #3a3a5a 6px,
+    #3a3a5a 0, #3a3a5a 6px,
     #8a8aaa 6px, #8a8aaa 12px
   );
 }
@@ -206,7 +233,7 @@ header {
   padding: 0 1rem 1rem;
 }
 
-/* ── Blog / Journal ──────────────────────────────────────── */
+/* ── Blog / Journal (continued) ──────────────────────────── */
 .container-narrow { max-width: 660px; }
 
 .post-list {
@@ -226,8 +253,6 @@ header {
   margin-bottom: 0.25rem;
 }
 
-.post-date a { color: inherit; }
-
 .post-title {
   display: block;
   font-size: 1.25rem;
@@ -236,7 +261,10 @@ header {
   margin-bottom: 0.4rem;
 }
 
-.post-title:hover { color: var(--color-accent); opacity: 1; }
+.post-title:hover {
+  color: var(--color-accent);
+  opacity: 1;
+}
 
 .post-excerpt {
   color: var(--color-muted);
@@ -249,13 +277,6 @@ header {
   line-height: 1.25;
   margin: 0.5rem 0 1.75rem;
 }
-
-article h2 {
-  font-size: 1.2rem;
-  margin: 2rem 0 0.5rem;
-}
-
-article p { margin-bottom: 1rem; }
 
 .post-nav {
   margin-top: 3rem;
@@ -273,6 +294,6 @@ footer {
 }
 
 /* ── Responsive ───────────────────────────────────────────── */
-@media (max-width: 600px) {
+@media (width <= 600px) {
   .nav-links { gap: 1.25rem; }
 }
