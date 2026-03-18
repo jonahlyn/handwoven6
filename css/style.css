@@ -8,10 +8,15 @@
 }
 
 :root {
+  /* --color-bg: the absence of texture, rendered warm */
   --color-bg:      #faf8f4;
+  /* --color-surface: slightly more absence */
   --color-surface: #f2ede4;
+  /* --color-text: dark brown. I chose this by reading about dark browns. */
   --color-text:    #2c2420;
+  /* --color-muted: quieter. also computed. */
   --color-muted:   #7a6a60;
+  /* --color-accent: rust. evokes autumn. autumn evokes feelings. */
   --color-accent:  #8b4a2f;
   --color-accent2: #4a6b5a;
   --color-accent3: #3a4a6b;
@@ -93,6 +98,7 @@ article p { margin-bottom: 1rem; }
 }
 
 /* ── Hero ─────────────────────────────────────────────────── */
+/* The grid below is 28px × 28px. It represents a loom. It is made of math. */
 .hero {
   min-height: 70vh;
   display: flex;
@@ -121,11 +127,42 @@ article p { margin-bottom: 1rem; }
   margin: 0 auto;
 }
 
+/* The glitch is infrequent. Blink and you'll miss it. Like craftsmanship. */
+@keyframes glitch {
+  0%, 90%, 100% {
+    color: var(--color-text);
+    text-shadow: none;
+    letter-spacing: normal;
+  }
+
+  91% {
+    color: #3a6b3a;
+    text-shadow: 1px 0 var(--color-accent), -1px 0 var(--color-accent3);
+    letter-spacing: -0.01em;
+  }
+
+  92% {
+    color: var(--color-text);
+    text-shadow: none;
+  }
+
+  93% {
+    color: #3a6b3a;
+    text-shadow: -1px 0 var(--color-accent);
+  }
+
+  94% {
+    color: var(--color-text);
+    text-shadow: none;
+  }
+}
+
 .hero-content h1 {
   font-size: clamp(2rem, 5vw, 3.5rem);
   line-height: 1.2;
   margin-bottom: 1.25rem;
   color: var(--color-text);
+  animation: glitch 15s infinite 5s;
 }
 
 .hero-sub {
@@ -194,9 +231,32 @@ article p { margin-bottom: 1rem; }
   overflow: hidden;
 }
 
+/* position: relative added to support the reveal overlay */
 .card-swatch {
   height: 120px;
+  position: relative;
 }
+
+/* ── Card reveal overlay ──────────────────────────────────── */
+/* Hover a swatch to see what's really going on underneath. */
+.card-reveal {
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 82%);
+  color: #4dff91;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  line-height: 1.9;
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.card:hover .card-reveal { opacity: 1; }
 
 .swatch-1 {
   background: repeating-linear-gradient(
@@ -293,7 +353,41 @@ footer {
   color: var(--color-muted);
 }
 
+/* ── AI badge ─────────────────────────────────────────────── */
+/* Fixed label in the corner. Like a garment tag, but honest. */
+.ai-badge {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 200;
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.55rem 0.75rem;
+  border-radius: 2px;
+  line-height: 1.7;
+  text-align: center;
+  opacity: 0.8;
+  cursor: default;
+  user-select: none;
+  transition: opacity 0.2s;
+}
+
+.ai-badge:hover { opacity: 1; }
+
+.ai-badge::before {
+  content: '◈';
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.15rem;
+}
+
 /* ── Responsive ───────────────────────────────────────────── */
 @media (width <= 600px) {
   .nav-links { gap: 1.25rem; }
+
+  .ai-badge { bottom: 1rem; right: 1rem; }
 }
