@@ -10,12 +10,16 @@
 :root {
   /* --color-bg: the absence of texture, rendered warm */
   --color-bg:      #faf8f4;
+
   /* --color-surface: slightly more absence */
   --color-surface: #f2ede4;
+
   /* --color-text: dark brown. I chose this by reading about dark browns. */
   --color-text:    #2c2420;
+
   /* --color-muted: quieter. also computed. */
   --color-muted:   #7a6a60;
+
   /* --color-accent: rust. evokes autumn. autumn evokes feelings. */
   --color-accent:  #8b4a2f;
   --color-accent2: #4a6b5a;
@@ -97,8 +101,7 @@ article p { margin-bottom: 1rem; }
   opacity: 1;
 }
 
-/* ── Hero ─────────────────────────────────────────────────── */
-/* The grid below is 28px × 28px. It represents a loom. It is made of math. */
+/* ── Hero — the grid is 28px × 28px. It represents a loom. It is made of math. ── */
 .hero {
   min-height: 70vh;
   display: flex;
@@ -237,8 +240,7 @@ article p { margin-bottom: 1rem; }
   position: relative;
 }
 
-/* ── Card reveal overlay ──────────────────────────────────── */
-/* Hover a swatch to see what's really going on underneath. */
+/* ── Card reveal overlay — hover a swatch to see what's really going on ── */
 .card-reveal {
   position: absolute;
   inset: 0;
@@ -353,8 +355,7 @@ footer {
   color: var(--color-muted);
 }
 
-/* ── AI badge ─────────────────────────────────────────────── */
-/* Fixed label in the corner. Like a garment tag, but honest. */
+/* ── AI badge — fixed corner label, like a garment tag, but honest ────── */
 .ai-badge {
   position: fixed;
   bottom: 1.5rem;
@@ -389,5 +390,8 @@ footer {
 @media (width <= 600px) {
   .nav-links { gap: 1.25rem; }
 
-  .ai-badge { bottom: 1rem; right: 1rem; }
+  .ai-badge {
+    bottom: 1rem;
+    right: 1rem;
+  }
 }
